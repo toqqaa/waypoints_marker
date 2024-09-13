@@ -1,0 +1,11 @@
+<launch>
+   
+
+    <arg name="json_file_path" default="$(find waypoints_marker_publisher)/../Robots-DataBase/robot_task/robot_task_str.json"/>
+    
+    <node pkg="waypoints_marker_publisher" type="waypoints_marker_publisher" name="waypoints_marker_publisher" output="screen">
+        <param name="json_file_path" value="$(arg json_file_path)" />
+    </node>
+
+
+</launch>

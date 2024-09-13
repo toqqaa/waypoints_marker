@@ -1,0 +1,22 @@
+<launch>
+   
+
+      <arg name="json_file_path" default="$(find waypoints_marker_publisher)/../Robots-DataBase/robot_task/robot_task_str.json"/>
+    
+      <node pkg="waypoints_marker_publisher" type="waypoints_marker_publisher" name="waypoints_marker_publisher" output="screen">
+          <param name="json_file_path" value="$(arg json_file_path)" />
+      </node>
+  
+    <arg name="map_file" default="$(find waypoints_marker_publisher)/../Robots-DataBase/robot_map/maps/map.yaml"/>
+    <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" output="screen"/>
+
+
+
+    <arg name="open_rviz" default="true"/>
+    <group if="$(arg open_rviz)"> 
+     <node pkg="rviz" type="rviz" name="rviz" required="true"
+            args="-d $(find waypoints_marker_publisher)/rviz/waypoints_config.rviz"/>
+    </group>
+
+
+</launch>
