@@ -13,8 +13,6 @@ Start by cloning the repository that contains the waypoint marker publisher
 
 ```bash
 git clone https://github.com/arche-robotics-internship/waypoints-marker.git
-cd waypoints-marker
-git checkout 1-task-assignment-publishing-robot-waypoints-from-json-file-to-map-using-rviz-markers 
 ```
 
 #### **Install Dependencies**
